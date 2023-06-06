@@ -1,0 +1,68 @@
+﻿@model WebApplication1.Models.Letter
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Letter</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Lid" class="control-label"></label>
+                <input asp-for="Lid" class="form-control" />
+                <span asp-validation-for="Lid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsAns" /> @Html.DisplayNameFor(model => model.IsAns)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateAns" class="control-label"></label>
+                <input asp-for="DateAns" class="form-control" />
+                <span asp-validation-for="DateAns" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThemaId" class="control-label"></label>
+                <input asp-for="ThemaId" class="form-control" />
+                <span asp-validation-for="ThemaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenderId" class="control-label"></label>
+                <input asp-for="SenderId" class="form-control" />
+                <span asp-validation-for="SenderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiverId" class="control-label"></label>
+                <input asp-for="ReceiverId" class="form-control" />
+                <span asp-validation-for="ReceiverId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HelperId" class="control-label"></label>
+                <input asp-for="HelperId" class="form-control" />
+                <span asp-validation-for="HelperId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
